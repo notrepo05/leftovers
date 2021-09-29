@@ -8,6 +8,7 @@ import (
 	"github.com/genevieve/leftovers/aws"
 	"github.com/genevieve/leftovers/azure"
 	"github.com/genevieve/leftovers/gcp"
+	"github.com/genevieve/leftovers/nimbus"
 	"github.com/genevieve/leftovers/nsxt"
 	"github.com/genevieve/leftovers/openstack"
 	"github.com/genevieve/leftovers/vsphere"
@@ -43,6 +44,8 @@ func GetLeftovers(logger *app.Logger, o app.Options) (leftovers, error) {
 		} else {
 			l, err = vsphere.NewLeftovers(logger, o.VSphereIP, o.VSphereUser, o.VSpherePassword, o.VSphereDC)
 		}
+	case app.Nimbus:
+		l, err = nimbus.NewLeftovers(logger, o.NimbusUser)
 	case app.Openstack:
 		l, err = openstack.NewLeftovers(logger, o.OpenstackAuthUrl, o.OpenstackUsername, o.OpenstackPassword, o.OpenstackDomain, o.OpenstackTenant, o.OpenstackRegion)
 	default:
