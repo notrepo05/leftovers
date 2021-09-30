@@ -21,9 +21,11 @@ resources:
 - name: release
   type: github-release
   source:
-    owner: ((leftovers.github_user))
+    owner: notrepo05
     repository: leftovers
     access_token: ((leftovers.github_access_token))
+    release: false
+    pre_release: true
 
 jobs:
 - name: unit
