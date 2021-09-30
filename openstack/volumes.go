@@ -2,8 +2,9 @@ package openstack
 
 import (
 	"fmt"
-	"github.com/genevieve/leftovers/common"
+
 	"github.com/gophercloud/gophercloud/openstack/blockstorage/v3/volumes"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface volumesClient --output fakes/volumes_client.go

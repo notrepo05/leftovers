@@ -7,7 +7,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	awsec2 "github.com/aws/aws-sdk-go/service/ec2"
-	"github.com/genevieve/leftovers/aws/common"
+	"github.com/notrepo05/leftovers/aws/common"
 )
 
 type Instance struct {

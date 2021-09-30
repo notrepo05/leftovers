@@ -2,9 +2,10 @@ package ec2
 
 import (
 	"fmt"
+
 	awsec2 "github.com/aws/aws-sdk-go/service/ec2"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface addressesClient --output fakes/addresses_client.go
@@ -35,7 +36,7 @@ func (d Addresses) List(filter string, regex bool) ([]common.Deletable, error) {
 	for _, a := range addresses.Addresses {
 		r := NewAddress(d.client, a.PublicIp, a.AllocationId, a.Tags)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

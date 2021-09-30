@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/genevieve/leftovers/app"
-	"github.com/genevieve/leftovers/aws"
+	"github.com/notrepo05/leftovers/app"
+	"github.com/notrepo05/leftovers/aws"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

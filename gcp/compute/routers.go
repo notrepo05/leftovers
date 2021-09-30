@@ -3,7 +3,7 @@ package compute
 import (
 	"fmt"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 	gcpcompute "google.golang.org/api/compute/v1"
 )
 

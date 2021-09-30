@@ -2,9 +2,10 @@ package ec2
 
 import (
 	"fmt"
+
 	awsec2 "github.com/aws/aws-sdk-go/service/ec2"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface networkInterfacesClient --output fakes/network_interfaces_client.go
@@ -35,7 +36,7 @@ func (e NetworkInterfaces) List(filter string, regex bool) ([]common.Deletable, 
 	for _, i := range networkInterfaces.NetworkInterfaces {
 		r := NewNetworkInterface(e.client, i.NetworkInterfaceId, i.TagSet)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

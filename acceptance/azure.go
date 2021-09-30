@@ -8,7 +8,7 @@ import (
 	"github.com/Azure/go-autorest/autorest"
 	"github.com/Azure/go-autorest/autorest/adal"
 	"github.com/Azure/go-autorest/autorest/azure"
-	"github.com/genevieve/leftovers/app"
+	"github.com/notrepo05/leftovers/app"
 	. "github.com/onsi/gomega"
 )
 

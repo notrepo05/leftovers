@@ -3,7 +3,7 @@ package azure
 import (
 	"fmt"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface appSecurityGroupsClient --output fakes/app_security_groups_client.go
@@ -37,7 +37,7 @@ func (g AppSecurityGroups) List(filter string, regex bool) ([]common.Deletable, 
 	for _, group := range groups {
 		r := NewAppSecurityGroup(g.client, g.rgName, group)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

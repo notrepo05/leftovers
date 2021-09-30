@@ -2,7 +2,8 @@ package dns
 
 import (
 	"fmt"
-	"github.com/genevieve/leftovers/common"
+
+	"github.com/notrepo05/leftovers/common"
 	gcpdns "google.golang.org/api/dns/v1"
 )
 

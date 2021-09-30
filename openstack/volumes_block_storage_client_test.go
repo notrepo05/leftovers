@@ -3,10 +3,10 @@ package openstack_test
 import (
 	"errors"
 
-	"github.com/genevieve/leftovers/openstack"
-	"github.com/genevieve/leftovers/openstack/fakes"
 	"github.com/gophercloud/gophercloud/openstack/blockstorage/v3/volumes"
 	"github.com/gophercloud/gophercloud/pagination"
+	"github.com/notrepo05/leftovers/openstack"
+	"github.com/notrepo05/leftovers/openstack/fakes"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

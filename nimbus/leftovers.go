@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	"github.com/fatih/color"
-	"github.com/genevieve/leftovers/app"
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/app"
+	"github.com/notrepo05/leftovers/common"
 )
 
 type resource interface {

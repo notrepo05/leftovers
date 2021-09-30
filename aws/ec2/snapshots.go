@@ -2,11 +2,12 @@ package ec2
 
 import (
 	"fmt"
+
 	"github.com/aws/aws-sdk-go/aws"
 	awsec2 "github.com/aws/aws-sdk-go/service/ec2"
 	awssts "github.com/aws/aws-sdk-go/service/sts"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface snapshotsClient --output fakes/snapshots_client.go
@@ -50,7 +51,7 @@ func (s Snapshots) List(filter string, regex bool) ([]common.Deletable, error) {
 	for _, snapshot := range output.Snapshots {
 		r := NewSnapshot(s.client, snapshot.SnapshotId)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

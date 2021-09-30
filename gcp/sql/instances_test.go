@@ -5,8 +5,8 @@ import (
 
 	gcpsql "google.golang.org/api/sqladmin/v1beta4"
 
-	"github.com/genevieve/leftovers/gcp/sql"
-	"github.com/genevieve/leftovers/gcp/sql/fakes"
+	"github.com/notrepo05/leftovers/gcp/sql"
+	"github.com/notrepo05/leftovers/gcp/sql/fakes"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )

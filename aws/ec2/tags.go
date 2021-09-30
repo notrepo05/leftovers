@@ -2,9 +2,10 @@ package ec2
 
 import (
 	"fmt"
+
 	awsec2 "github.com/aws/aws-sdk-go/service/ec2"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface tagsClient --output fakes/tags_client.go
@@ -39,7 +40,7 @@ func (a Tags) List(filter string, regex bool) ([]common.Deletable, error) {
 
 		r := NewTag(a.client, t.Key, t.Value, t.ResourceId)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

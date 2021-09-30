@@ -2,9 +2,10 @@ package rds
 
 import (
 	"fmt"
+
 	awsrds "github.com/aws/aws-sdk-go/service/rds"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface dbSubnetGroupsClient --output fakes/db_subnet_groups_client.go
@@ -35,7 +36,7 @@ func (d DBSubnetGroups) List(filter string, regex bool) ([]common.Deletable, err
 	for _, db := range dbSubnetGroups.DBSubnetGroups {
 		r := NewDBSubnetGroup(d.client, db.DBSubnetGroupName)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

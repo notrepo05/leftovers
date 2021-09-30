@@ -3,8 +3,8 @@ package storage_test
 import (
 	"errors"
 
-	"github.com/genevieve/leftovers/gcp/storage"
-	"github.com/genevieve/leftovers/gcp/storage/fakes"
+	"github.com/notrepo05/leftovers/gcp/storage"
+	"github.com/notrepo05/leftovers/gcp/storage/fakes"
 	gcpstorage "google.golang.org/api/storage/v1"
 
 	. "github.com/onsi/ginkgo"

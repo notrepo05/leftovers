@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 
-	"github.com/genevieve/leftovers/nsxt/logicalrouting"
-	"github.com/genevieve/leftovers/nsxt/logicalrouting/fakes"
+	"github.com/notrepo05/leftovers/nsxt/logicalrouting"
+	"github.com/notrepo05/leftovers/nsxt/logicalrouting/fakes"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )

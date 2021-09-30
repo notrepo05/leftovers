@@ -7,8 +7,8 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/genevieve/leftovers/app"
-	"github.com/genevieve/leftovers/gcp/compute"
+	"github.com/notrepo05/leftovers/app"
+	"github.com/notrepo05/leftovers/gcp/compute"
 	"golang.org/x/oauth2/google"
 	gcpcompute "google.golang.org/api/compute/v1"
 

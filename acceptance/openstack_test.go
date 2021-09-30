@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/genevieve/leftovers/app"
-	"github.com/genevieve/leftovers/openstack"
+	"github.com/notrepo05/leftovers/app"
+	"github.com/notrepo05/leftovers/openstack"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/genevieve/leftovers/app"
-	"github.com/genevieve/leftovers/azure"
+	"github.com/notrepo05/leftovers/app"
+	"github.com/notrepo05/leftovers/azure"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
@@ -15,10 +15,10 @@ import (
 
 var _ = Describe("Azure", func() {
 	var (
-		acc     AzureAcceptance
-		stdout  *bytes.Buffer
-		filter  string
-		deleter azure.Leftovers
+		acc         AzureAcceptance
+		stdout      *bytes.Buffer
+		filter      string
+		deleter     azure.Leftovers
 		regexFilter string
 	)
 

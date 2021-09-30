@@ -2,9 +2,10 @@ package kms
 
 import (
 	"fmt"
+
 	awskms "github.com/aws/aws-sdk-go/service/kms"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface keysClient --output fakes/keys_client.go
@@ -46,7 +47,7 @@ func (k Keys) List(filter string, regex bool) ([]common.Deletable, error) {
 
 		r := NewKey(k.client, key.KeyId, metadata.KeyMetadata, tags.Tags)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

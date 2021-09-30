@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/genevieve/leftovers/app"
+	"github.com/notrepo05/leftovers/app"
 	. "github.com/onsi/gomega"
 	nsxt "github.com/vmware/go-vmware-nsxt"
 	"github.com/vmware/go-vmware-nsxt/manager"

@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/genevieve/leftovers/app"
-	"github.com/genevieve/leftovers/gcp"
+	"github.com/notrepo05/leftovers/app"
+	"github.com/notrepo05/leftovers/gcp"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
@@ -15,10 +15,10 @@ import (
 
 var _ = Describe("GCP", func() {
 	var (
-		acc     GCPAcceptance
-		stdout  *bytes.Buffer
-		filter  string
-		deleter gcp.Leftovers
+		acc         GCPAcceptance
+		stdout      *bytes.Buffer
+		filter      string
+		deleter     gcp.Leftovers
 		regexFilter string
 	)
 

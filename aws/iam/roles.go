@@ -2,9 +2,10 @@ package iam
 
 import (
 	"fmt"
+
 	awsiam "github.com/aws/aws-sdk-go/service/iam"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface rolesClient --output fakes/roles_client.go
@@ -37,7 +38,7 @@ func (o Roles) List(filter string, regex bool) ([]common.Deletable, error) {
 	for _, role := range roles.Roles {
 		r := NewRole(o.client, o.policies, role.RoleName)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

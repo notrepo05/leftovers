@@ -2,8 +2,9 @@ package openstack
 
 import (
 	"fmt"
-	"github.com/genevieve/leftovers/common"
+
 	"github.com/gophercloud/gophercloud/openstack/compute/v2/servers"
+	"github.com/notrepo05/leftovers/common"
 )
 
 type ComputeInstances struct {

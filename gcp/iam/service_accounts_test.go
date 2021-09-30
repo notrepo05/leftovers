@@ -5,8 +5,8 @@ import (
 
 	gcpiam "google.golang.org/api/iam/v1"
 
-	"github.com/genevieve/leftovers/gcp/iam"
-	"github.com/genevieve/leftovers/gcp/iam/fakes"
+	"github.com/notrepo05/leftovers/gcp/iam"
+	"github.com/notrepo05/leftovers/gcp/iam/fakes"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )

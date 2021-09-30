@@ -5,8 +5,8 @@ import (
 
 	gcpstorage "google.golang.org/api/storage/v1"
 
-	"github.com/genevieve/leftovers/gcp/storage"
-	"github.com/genevieve/leftovers/gcp/storage/fakes"
+	"github.com/notrepo05/leftovers/gcp/storage"
+	"github.com/notrepo05/leftovers/gcp/storage/fakes"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )

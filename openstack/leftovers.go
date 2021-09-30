@@ -5,10 +5,10 @@ import (
 	"time"
 
 	"github.com/fatih/color"
-	"github.com/genevieve/leftovers/app"
-	"github.com/genevieve/leftovers/common"
 	"github.com/gophercloud/gophercloud"
 	"github.com/gophercloud/gophercloud/openstack"
+	"github.com/notrepo05/leftovers/app"
+	"github.com/notrepo05/leftovers/common"
 )
 
 type listTyper interface {

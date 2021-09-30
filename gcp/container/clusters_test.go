@@ -3,8 +3,8 @@ package container_test
 import (
 	"errors"
 
-	"github.com/genevieve/leftovers/gcp/container"
-	"github.com/genevieve/leftovers/gcp/container/fakes"
+	"github.com/notrepo05/leftovers/gcp/container"
+	"github.com/notrepo05/leftovers/gcp/container/fakes"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	gcpcontainer "google.golang.org/api/container/v1"

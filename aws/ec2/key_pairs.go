@@ -2,9 +2,10 @@ package ec2
 
 import (
 	"fmt"
+
 	awsec2 "github.com/aws/aws-sdk-go/service/ec2"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface keyPairsClient --output fakes/key_pairs_client.go
@@ -35,7 +36,7 @@ func (k KeyPairs) List(filter string, regex bool) ([]common.Deletable, error) {
 	for _, key := range keyPairs.KeyPairs {
 		r := NewKeyPair(k.client, key.KeyName)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

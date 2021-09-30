@@ -2,9 +2,10 @@ package eks
 
 import (
 	"fmt"
+
 	awseks "github.com/aws/aws-sdk-go/service/eks"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface clustersClient --output fakes/clusters_client.go
@@ -41,7 +42,7 @@ func (c Clusters) List(filter string, regex bool) ([]common.Deletable, error) {
 	for _, cluster := range clusters.Clusters {
 		r := NewCluster(c.client, cluster)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

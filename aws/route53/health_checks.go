@@ -2,9 +2,10 @@ package route53
 
 import (
 	"fmt"
+
 	awsroute53 "github.com/aws/aws-sdk-go/service/route53"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface healthChecksClient --output fakes/health_checks_client.go
@@ -35,7 +36,7 @@ func (h HealthChecks) List(filter string, regex bool) ([]common.Deletable, error
 	for _, check := range checks.HealthChecks {
 		r := NewHealthCheck(h.client, check.Id)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

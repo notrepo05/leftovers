@@ -3,7 +3,7 @@ package app_test
 import (
 	"os"
 
-	"github.com/genevieve/leftovers/app"
+	"github.com/notrepo05/leftovers/app"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )

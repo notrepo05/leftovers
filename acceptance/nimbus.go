@@ -3,8 +3,8 @@ package acceptance
 import (
 	"os"
 
-	"github.com/genevieve/leftovers/app"
-	"github.com/genevieve/leftovers/nimbus"
+	"github.com/notrepo05/leftovers/app"
+	"github.com/notrepo05/leftovers/nimbus"
 	. "github.com/onsi/gomega"
 )
 

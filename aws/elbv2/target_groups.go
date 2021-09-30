@@ -2,9 +2,10 @@ package elbv2
 
 import (
 	"fmt"
+
 	awselbv2 "github.com/aws/aws-sdk-go/service/elbv2"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface targetGroupsClient --output fakes/target_groups_client.go
@@ -35,7 +36,7 @@ func (t TargetGroups) List(filter string, regex bool) ([]common.Deletable, error
 	for _, g := range targetGroups.TargetGroups {
 		r := NewTargetGroup(t.client, g.TargetGroupName, g.TargetGroupArn)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

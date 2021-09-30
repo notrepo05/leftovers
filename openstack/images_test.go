@@ -3,9 +3,9 @@ package openstack_test
 import (
 	"errors"
 
-	"github.com/genevieve/leftovers/openstack"
-	"github.com/genevieve/leftovers/openstack/fakes"
 	"github.com/gophercloud/gophercloud/openstack/imageservice/v2/images"
+	"github.com/notrepo05/leftovers/openstack"
+	"github.com/notrepo05/leftovers/openstack/fakes"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )

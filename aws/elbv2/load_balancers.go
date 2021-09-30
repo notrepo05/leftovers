@@ -2,9 +2,10 @@ package elbv2
 
 import (
 	"fmt"
+
 	awselbv2 "github.com/aws/aws-sdk-go/service/elbv2"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface loadBalancersClient --output fakes/load_balancers_client.go
@@ -38,7 +39,7 @@ func (l LoadBalancers) List(filter string, regex bool) ([]common.Deletable, erro
 	for _, lb := range loadBalancers.LoadBalancers {
 		r := NewLoadBalancer(l.client, lb.LoadBalancerName, lb.LoadBalancerArn)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

@@ -2,9 +2,10 @@ package rds
 
 import (
 	"fmt"
+
 	awsrds "github.com/aws/aws-sdk-go/service/rds"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface dbClustersClient --output fakes/db_clusters_client.go
@@ -39,7 +40,7 @@ func (d DBClusters) List(filter string, regex bool) ([]common.Deletable, error) 
 			continue
 		}
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

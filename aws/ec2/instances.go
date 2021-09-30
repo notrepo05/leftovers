@@ -2,10 +2,11 @@ package ec2
 
 import (
 	"fmt"
+
 	"github.com/aws/aws-sdk-go/aws"
 	awsec2 "github.com/aws/aws-sdk-go/service/ec2"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface instancesClient --output fakes/instances_client.go
@@ -46,7 +47,7 @@ func (i Instances) List(filter string, regex bool) ([]common.Deletable, error) {
 		for _, instance := range r.Instances {
 			r := NewInstance(i.client, i.logger, i.resourceTags, instance.InstanceId, instance.KeyName, instance.Tags)
 
-			if !common.ResourceMatches(r.Name(),  filter, regex) {
+			if !common.ResourceMatches(r.Name(), filter, regex) {
 				continue
 			}
 

@@ -5,8 +5,8 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws"
 	awseks "github.com/aws/aws-sdk-go/service/eks"
-	"github.com/genevieve/leftovers/aws/eks"
-	"github.com/genevieve/leftovers/aws/eks/fakes"
+	"github.com/notrepo05/leftovers/aws/eks"
+	"github.com/notrepo05/leftovers/aws/eks/fakes"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )

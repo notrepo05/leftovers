@@ -6,8 +6,8 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws"
 	awsiam "github.com/aws/aws-sdk-go/service/iam"
-	"github.com/genevieve/leftovers/aws/iam"
-	"github.com/genevieve/leftovers/aws/iam/fakes"
+	"github.com/notrepo05/leftovers/aws/iam"
+	"github.com/notrepo05/leftovers/aws/iam/fakes"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

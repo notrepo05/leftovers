@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	awsroute53 "github.com/aws/aws-sdk-go/service/route53"
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface hostedZonesClient --output fakes/hosted_zones_client.go
@@ -44,7 +44,7 @@ func (z HostedZones) List(filter string, regex bool) ([]common.Deletable, error)
 	for _, zone := range zones.HostedZones {
 		r := NewHostedZone(z.client, zone.Id, zone.Name, z.recordSets, filter, false)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) && !z.recordSetsContainFilter(zone.Id, filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) && !z.recordSetsContainFilter(zone.Id, filter, regex) {
 			continue
 		}
 

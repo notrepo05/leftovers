@@ -2,9 +2,10 @@ package kms
 
 import (
 	"fmt"
+
 	awskms "github.com/aws/aws-sdk-go/service/kms"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface aliasesClient --output fakes/aliases_client.go
@@ -35,7 +36,7 @@ func (a Aliases) List(filter string, regex bool) ([]common.Deletable, error) {
 	for _, alias := range aliases.Aliases {
 		r := NewAlias(a.client, alias.AliasName)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

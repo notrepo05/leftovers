@@ -3,7 +3,7 @@ package container
 import (
 	"fmt"
 
-	"github.com/genevieve/leftovers/gcp/common"
+	"github.com/notrepo05/leftovers/gcp/common"
 
 	gcpcontainer "google.golang.org/api/container/v1"
 )

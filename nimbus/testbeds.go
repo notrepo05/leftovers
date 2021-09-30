@@ -3,7 +3,7 @@ package nimbus
 import (
 	"fmt"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface testbedsClient --output fakes/testbeds_client.go

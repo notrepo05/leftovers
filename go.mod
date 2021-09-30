@@ -1,4 +1,4 @@
-module github.com/genevieve/leftovers
+module github.com/notrepo05/leftovers
 
 go 1.14
 

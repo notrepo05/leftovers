@@ -2,8 +2,9 @@ package openstack
 
 import (
 	"fmt"
-	"github.com/genevieve/leftovers/common"
+
 	"github.com/gophercloud/gophercloud/openstack/imageservice/v2/images"
+	"github.com/notrepo05/leftovers/common"
 )
 
 type Images struct {

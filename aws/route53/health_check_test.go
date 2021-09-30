@@ -4,8 +4,8 @@ import (
 	"errors"
 
 	"github.com/aws/aws-sdk-go/aws"
-	"github.com/genevieve/leftovers/aws/route53"
-	"github.com/genevieve/leftovers/aws/route53/fakes"
+	"github.com/notrepo05/leftovers/aws/route53"
+	"github.com/notrepo05/leftovers/aws/route53/fakes"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

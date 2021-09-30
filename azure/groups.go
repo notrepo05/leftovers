@@ -3,7 +3,7 @@ package azure
 import (
 	"fmt"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface groupsClient --output fakes/groups_client.go
@@ -35,7 +35,7 @@ func (g Groups) List(filter string, regex bool) ([]common.Deletable, error) {
 	for _, group := range groups {
 		r := NewGroup(g.client, group)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

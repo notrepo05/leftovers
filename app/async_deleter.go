@@ -5,8 +5,8 @@ import (
 	"sync"
 
 	"github.com/fatih/color"
-	"github.com/genevieve/leftovers/common"
 	multierror "github.com/hashicorp/go-multierror"
+	"github.com/notrepo05/leftovers/common"
 )
 
 type logger interface {

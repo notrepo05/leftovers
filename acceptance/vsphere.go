@@ -7,8 +7,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/genevieve/leftovers/app"
-	"github.com/genevieve/leftovers/vsphere"
+	"github.com/notrepo05/leftovers/app"
+	"github.com/notrepo05/leftovers/vsphere"
 	. "github.com/onsi/gomega"
 	"github.com/vmware/govmomi"
 	"github.com/vmware/govmomi/find"

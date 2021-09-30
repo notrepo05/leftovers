@@ -2,9 +2,10 @@ package iam
 
 import (
 	"fmt"
+
 	awsiam "github.com/aws/aws-sdk-go/service/iam"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface serverCertificatesClient --output fakes/server_certificates_client.go
@@ -35,7 +36,7 @@ func (s ServerCertificates) List(filter string, regex bool) ([]common.Deletable,
 	for _, c := range certificates.ServerCertificateMetadataList {
 		r := NewServerCertificate(s.client, c.ServerCertificateName)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

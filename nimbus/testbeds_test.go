@@ -3,8 +3,8 @@ package nimbus_test
 import (
 	"errors"
 
-	"github.com/genevieve/leftovers/nimbus"
-	"github.com/genevieve/leftovers/nimbus/fakes"
+	"github.com/notrepo05/leftovers/nimbus"
+	"github.com/notrepo05/leftovers/nimbus/fakes"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )

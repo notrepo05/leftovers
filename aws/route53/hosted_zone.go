@@ -2,8 +2,9 @@ package route53
 
 import (
 	"fmt"
+
 	awsroute53 "github.com/aws/aws-sdk-go/service/route53"
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 type HostedZone struct {
@@ -12,7 +13,7 @@ type HostedZone struct {
 	identifier string
 	recordSets recordSets
 	filter     string
-	regex	   bool
+	regex      bool
 }
 
 func NewHostedZone(client hostedZonesClient, id, name *string, recordSets recordSets, filter string, regex bool) HostedZone {

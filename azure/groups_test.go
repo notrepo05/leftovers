@@ -3,8 +3,8 @@ package azure_test
 import (
 	"errors"
 
-	"github.com/genevieve/leftovers/azure"
-	"github.com/genevieve/leftovers/azure/fakes"
+	"github.com/notrepo05/leftovers/azure"
+	"github.com/notrepo05/leftovers/azure/fakes"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )

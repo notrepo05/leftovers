@@ -5,8 +5,8 @@ import (
 
 	gcpdns "google.golang.org/api/dns/v1"
 
-	"github.com/genevieve/leftovers/gcp/dns"
-	"github.com/genevieve/leftovers/gcp/dns/fakes"
+	"github.com/notrepo05/leftovers/gcp/dns"
+	"github.com/notrepo05/leftovers/gcp/dns/fakes"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )

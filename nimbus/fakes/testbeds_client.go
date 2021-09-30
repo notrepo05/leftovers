@@ -3,7 +3,7 @@ package fakes
 import (
 	"sync"
 
-	"github.com/genevieve/leftovers/nimbus"
+	"github.com/notrepo05/leftovers/nimbus"
 )
 
 type TestbedsClient struct {

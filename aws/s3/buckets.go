@@ -2,9 +2,10 @@ package s3
 
 import (
 	"fmt"
+
 	awss3 "github.com/aws/aws-sdk-go/service/s3"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface bucketsClient --output fakes/buckets_client.go
@@ -40,7 +41,7 @@ func (b Buckets) List(filter string, regex bool) ([]common.Deletable, error) {
 	for _, bucket := range buckets.Buckets {
 		r := NewBucket(b.client, bucket.Name)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

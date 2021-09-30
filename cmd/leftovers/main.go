@@ -4,9 +4,9 @@ import (
 	"log"
 	"os"
 
-	"github.com/genevieve/leftovers/app"
-	"github.com/genevieve/leftovers/commands"
 	flags "github.com/jessevdk/go-flags"
+	"github.com/notrepo05/leftovers/app"
+	"github.com/notrepo05/leftovers/commands"
 )
 
 type command interface {

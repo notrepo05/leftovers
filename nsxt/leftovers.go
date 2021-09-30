@@ -5,10 +5,10 @@ import (
 	"fmt"
 
 	"github.com/fatih/color"
-	"github.com/genevieve/leftovers/app"
-	"github.com/genevieve/leftovers/common"
-	"github.com/genevieve/leftovers/nsxt/groupingobjects"
-	"github.com/genevieve/leftovers/nsxt/logicalrouting"
+	"github.com/notrepo05/leftovers/app"
+	"github.com/notrepo05/leftovers/common"
+	"github.com/notrepo05/leftovers/nsxt/groupingobjects"
+	"github.com/notrepo05/leftovers/nsxt/logicalrouting"
 	nsxt "github.com/vmware/go-vmware-nsxt"
 )
 

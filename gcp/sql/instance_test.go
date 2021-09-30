@@ -3,8 +3,8 @@ package sql_test
 import (
 	"errors"
 
-	"github.com/genevieve/leftovers/gcp/sql"
-	"github.com/genevieve/leftovers/gcp/sql/fakes"
+	"github.com/notrepo05/leftovers/gcp/sql"
+	"github.com/notrepo05/leftovers/gcp/sql/fakes"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

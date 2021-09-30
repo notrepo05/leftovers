@@ -5,8 +5,8 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/genevieve/leftovers/aws/ec2"
-	"github.com/genevieve/leftovers/aws/ec2/fakes"
+	"github.com/notrepo05/leftovers/aws/ec2"
+	"github.com/notrepo05/leftovers/aws/ec2/fakes"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

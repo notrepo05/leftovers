@@ -2,9 +2,10 @@ package iam
 
 import (
 	"fmt"
+
 	awsiam "github.com/aws/aws-sdk-go/service/iam"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface usersClient --output fakes/users_client.go
@@ -39,7 +40,7 @@ func (u Users) List(filter string, regex bool) ([]common.Deletable, error) {
 	for _, r := range users.Users {
 		r := NewUser(u.client, u.policies, u.accessKeys, r.UserName)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

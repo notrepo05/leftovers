@@ -2,10 +2,11 @@ package ec2
 
 import (
 	"fmt"
+
 	awsec2 "github.com/aws/aws-sdk-go/service/ec2"
 	awssts "github.com/aws/aws-sdk-go/service/sts"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface imagesClient --output fakes/images_client.go
@@ -52,7 +53,7 @@ func (i Images) List(filter string, regex bool) ([]common.Deletable, error) {
 	for _, image := range images.Images {
 		r := NewImage(i.client, image.ImageId, i.resourceTags)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

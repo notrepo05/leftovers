@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/genevieve/leftovers/gcp/compute"
-	"github.com/genevieve/leftovers/gcp/compute/fakes"
+	"github.com/notrepo05/leftovers/gcp/compute"
+	"github.com/notrepo05/leftovers/gcp/compute/fakes"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

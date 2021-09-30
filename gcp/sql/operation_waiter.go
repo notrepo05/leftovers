@@ -3,7 +3,7 @@ package sql
 import (
 	"fmt"
 
-	"github.com/genevieve/leftovers/gcp/common"
+	"github.com/notrepo05/leftovers/gcp/common"
 
 	gcpsql "google.golang.org/api/sqladmin/v1beta4"
 )

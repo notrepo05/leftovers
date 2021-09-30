@@ -2,10 +2,11 @@ package ec2
 
 import (
 	"fmt"
+
 	"github.com/aws/aws-sdk-go/aws"
 	awsec2 "github.com/aws/aws-sdk-go/service/ec2"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface volumesClient --output fakes/volumes_client.go
@@ -41,7 +42,7 @@ func (v Volumes) List(filter string, regex bool) ([]common.Deletable, error) {
 	for _, volume := range output.Volumes {
 		r := NewVolume(v.client, volume.VolumeId, volume.State, volume.Tags)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

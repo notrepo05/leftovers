@@ -4,14 +4,14 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/genevieve/leftovers/app"
-	"github.com/genevieve/leftovers/aws"
-	"github.com/genevieve/leftovers/azure"
-	"github.com/genevieve/leftovers/gcp"
-	"github.com/genevieve/leftovers/nimbus"
-	"github.com/genevieve/leftovers/nsxt"
-	"github.com/genevieve/leftovers/openstack"
-	"github.com/genevieve/leftovers/vsphere"
+	"github.com/notrepo05/leftovers/app"
+	"github.com/notrepo05/leftovers/aws"
+	"github.com/notrepo05/leftovers/azure"
+	"github.com/notrepo05/leftovers/gcp"
+	"github.com/notrepo05/leftovers/nimbus"
+	"github.com/notrepo05/leftovers/nsxt"
+	"github.com/notrepo05/leftovers/openstack"
+	"github.com/notrepo05/leftovers/vsphere"
 )
 
 type leftovers interface {

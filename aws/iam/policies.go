@@ -2,10 +2,11 @@ package iam
 
 import (
 	"fmt"
+
 	"github.com/aws/aws-sdk-go/aws"
 	awsiam "github.com/aws/aws-sdk-go/service/iam"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface policiesClient --output fakes/policies_client.go
@@ -38,7 +39,7 @@ func (p Policies) List(filter string, regex bool) ([]common.Deletable, error) {
 	for _, o := range policies.Policies {
 		r := NewPolicy(p.client, p.logger, o.PolicyName, o.Arn)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

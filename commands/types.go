@@ -1,6 +1,6 @@
 package commands
 
-import "github.com/genevieve/leftovers/app"
+import "github.com/notrepo05/leftovers/app"
 
 type Types struct {
 	leftovers leftovers

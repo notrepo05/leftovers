@@ -2,9 +2,10 @@ package rds
 
 import (
 	"fmt"
+
 	awsrds "github.com/aws/aws-sdk-go/service/rds"
 
-	"github.com/genevieve/leftovers/common"
+	"github.com/notrepo05/leftovers/common"
 )
 
 //go:generate faux --interface dbInstancesClient --output fakes/db_instances_client.go
@@ -40,7 +41,7 @@ func (d DBInstances) List(filter string, regex bool) ([]common.Deletable, error)
 
 		r := NewDBInstance(d.client, db.DBInstanceIdentifier)
 
-		if !common.ResourceMatches(r.Name(),  filter, regex) {
+		if !common.ResourceMatches(r.Name(), filter, regex) {
 			continue
 		}
 

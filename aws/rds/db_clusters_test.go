@@ -5,8 +5,8 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws"
 	awsrds "github.com/aws/aws-sdk-go/service/rds"
-	"github.com/genevieve/leftovers/aws/rds"
-	"github.com/genevieve/leftovers/aws/rds/fakes"
+	"github.com/notrepo05/leftovers/aws/rds"
+	"github.com/notrepo05/leftovers/aws/rds/fakes"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
