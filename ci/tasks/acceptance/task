@@ -2,9 +2,9 @@
 
 ROOT="${PWD}"
 
-mkdir -p "${GOPATH}/src/github.com/genevieve"
+mkdir -p "${GOPATH}/src/github.com/notrepo05"
 
-pushd "${GOPATH}/src/github.com/genevieve" > /dev/null
+pushd "${GOPATH}/src/github.com/notrepo05" > /dev/null
   ln -s "${ROOT}/leftovers"
 
   ./leftovers/scripts/test acceptance

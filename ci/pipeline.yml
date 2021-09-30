@@ -6,31 +6,24 @@ groups:
   - acceptance-azure
   - acceptance-gcp
   - acceptance-vsphere
+  - acceptance-nimbus
   - acceptance-openstack
   - releasable
   - build-release
-  - bump-brew-tap
 
 resources:
 - name: leftovers
   type: git
   source:
-    branch: master
-    uri: https://github.com/genevieve/leftovers.git
+    branch: feature/regex-matching
+    uri: https://github.com/notrepo05/leftovers.git
 
 - name: release
   type: github-release
   source:
-    owner: genevieve
+    owner: ((leftovers.github_user))
     repository: leftovers
-    access_token: ((leftovers_access_token))
-
-- name: homebrew-tap
-  type: git
-  source:
-    branch: master
-    uri: git@github.com:genevieve/homebrew-tap.git
-    private_key: ((tap_private_key))
+    access_token: ((leftovers.github_access_token))
 
 jobs:
 - name: unit
@@ -51,7 +44,7 @@ jobs:
     file: leftovers/ci/tasks/acceptance/task.yml
     params:
       LEFTOVERS_ACCEPTANCE: gcp
-      BBL_GCP_SERVICE_ACCOUNT_KEY: ((gcp_service_account_key))
+      BBL_GCP_SERVICE_ACCOUNT_KEY: ((leftovers.gcp_service_account_key))
 
 - name: acceptance-aws
   serial: true
@@ -63,9 +56,9 @@ jobs:
     file: leftovers/ci/tasks/acceptance/task.yml
     params:
       LEFTOVERS_ACCEPTANCE: aws
-      BBL_AWS_ACCESS_KEY_ID: ((aws_access_key_id))
-      BBL_AWS_SECRET_ACCESS_KEY: ((aws_secret_access_key))
-      BBL_AWS_REGION: ((aws_region))
+      BBL_AWS_ACCESS_KEY_ID: ((leftovers.aws_access_key_id))
+      BBL_AWS_SECRET_ACCESS_KEY: ((leftovers.aws_secret_access_key))
+      BBL_AWS_REGION: ((leftovers.aws_region))
 
 - name: acceptance-azure
   serial: true
@@ -77,10 +70,10 @@ jobs:
     file: leftovers/ci/tasks/acceptance/task.yml
     params:
       LEFTOVERS_ACCEPTANCE: azure
-      BBL_AZURE_SUBSCRIPTION_ID: ((azure_subscription_id))
-      BBL_AZURE_TENANT_ID: ((azure_tenant_id))
-      BBL_AZURE_CLIENT_ID: ((azure_client_id))
-      BBL_AZURE_CLIENT_SECRET: ((azure_client_secret))
+      BBL_AZURE_SUBSCRIPTION_ID: ((leftovers.azure_subscription_id))
+      BBL_AZURE_TENANT_ID: ((leftovers.azure_tenant_id))
+      BBL_AZURE_CLIENT_ID: ((leftovers.azure_client_id))
+      BBL_AZURE_CLIENT_SECRET: ((leftovers.azure_client_secret))
 
 - name: acceptance-vsphere
   serial: true
@@ -91,16 +84,29 @@ jobs:
   - task: acceptance
     file: leftovers/ci/tasks/acceptance/task.yml
     tags:
-    - ((vsphere_tag))
+    - ((leftovers.vsphere_tag))
     params:
       LEFTOVERS_ACCEPTANCE: vsphere
-      BBL_VSPHERE_VCENTER_IP: ((vsphere_vcenter_ip))
-      BBL_VSPHERE_VCENTER_USER: ((vsphere_vcenter_user))
-      BBL_VSPHERE_VCENTER_PASSWORD: ((vsphere_vcenter_password))
-      BBL_VSPHERE_VCENTER_DC: ((vsphere_vcenter_dc))
-      BBL_VSPHERE_VCENTER_DS: ((vsphere_vcenter_ds))
-      BBL_VSPHERE_VCENTER_RP: ((vsphere_vcenter_rp))
-      LEFTOVERS_VSPHERE_FILTER: ((vsphere_vcenter_disks))
+      BBL_VSPHERE_VCENTER_IP: ((leftovers.vsphere_vcenter_ip))
+      BBL_VSPHERE_VCENTER_USER: ((leftovers.vsphere_vcenter_user))
+      BBL_VSPHERE_VCENTER_PASSWORD: ((leftovers.vsphere_vcenter_password))
+      BBL_VSPHERE_VCENTER_DC: ((leftovers.vsphere_vcenter_dc))
+      BBL_VSPHERE_VCENTER_DS: ((leftovers.vsphere_vcenter_ds))
+      BBL_VSPHERE_VCENTER_RP: ((leftovers.vsphere_vcenter_rp))
+      LEFTOVERS_VSPHERE_FILTER: ((leftovers.vsphere_vcenter_disks))
+
+- name: acceptance-nimbus
+  serial: true
+  plan:
+  - get: leftovers
+    trigger: true
+    passed: [unit]
+  - task: acceptance
+    file: leftovers/ci/tasks/acceptance/task.yml
+    params:
+      LEFTOVERS_ACCEPTANCE: nimbus
+      LEFTOVERS_NIMBUS_RESULTS_DIR: ((leftovers.nimbus_results_dir))
+      BBL_NIMBUS_USER: ((leftovers.nimbus_user))
 
 - name: acceptance-openstack
   serial: true
@@ -112,14 +118,14 @@ jobs:
     file: leftovers/ci/tasks/acceptance/task.yml
     params:
       LEFTOVERS_ACCEPTANCE: openstack
-      BBL_OPENSTACK_AUTH_URL: ((openstack_auth_url))
-      BBL_OPENSTACK_PASSWORD: ((openstack_password))
-      BBL_OPENSTACK_USERNAME: ((openstack_username))
-      BBL_OPENSTACK_PROJECT: ((openstack_project))
-      BBL_OPENSTACK_DOMAIN: ((openstack_domain))
-      BBL_OPENSTACK_REGION: ((openstack_region))
+      BBL_OPENSTACK_AUTH_URL: ((leftovers.openstack_auth_url))
+      BBL_OPENSTACK_PASSWORD: ((leftovers.openstack_password))
+      BBL_OPENSTACK_USERNAME: ((leftovers.openstack_username))
+      BBL_OPENSTACK_PROJECT: ((leftovers.openstack_project))
+      BBL_OPENSTACK_DOMAIN: ((leftovers.openstack_domain))
+      BBL_OPENSTACK_REGION: ((leftovers.openstack_region))
     tags:
-    - ((openstack_tag))
+    - ((leftovers.openstack_tag))
 
 - name: releasable
   plan:
@@ -130,6 +136,8 @@ jobs:
     - acceptance-aws
     - acceptance-azure
     - acceptance-vsphere
+    - acceptance-nimbus
+    - acceptance-openstack
 
 - name: build-release
   plan:
@@ -146,23 +154,3 @@ jobs:
       commitish: builds/commitish
       globs:
       - builds/bin/leftovers-*
-
-- name: bump-brew-tap
-  plan:
-  - in_parallel:
-    - get: leftovers
-      passed: [build-release]
-    - get: homebrew-tap
-    - get: release
-      passed: [build-release]
-      trigger: true
-      params:
-        version: { tag: release/version }
-        globs:
-        - leftovers-*-darwin-amd64
-        - leftovers-*-linux-amd64
-  - task: bump-brew-tap
-    file: leftovers/ci/tasks/bump-brew-tap/task.yml
-  - put: homebrew-tap
-    params:
-      repository: updated-homebrew-tap/homebrew-tap

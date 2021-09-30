@@ -1,6 +1,7 @@
-# This README is for the github.com/notrepo05/leftovers fork from github.com/genevieve/leftovers
-
 ### This fork aims to stabilize deletion (so far for AWS) and add extended regex filtering support.
+
+# How to release
+There is a release pipeline on runway: [here](https://runway-ci.eng.vmware.com/teams/ppe-release/pipelines/leftovers). The configuration is located at `ci/pipeline.yml` and creds come from [Vault/ppe-release](https://runway-vault.svc.eng.vmware.com/ui/vault/secrets/runway_concourse/show/ppe-release/leftovers).
 
 # Leftovers :turkey:
 
