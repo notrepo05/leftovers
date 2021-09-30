@@ -135,9 +135,9 @@ jobs:
     - acceptance-gcp
     - acceptance-aws
     - acceptance-azure
-    - acceptance-vsphere
     - acceptance-nimbus
-    - acceptance-openstack
+    # - acceptance-vsphere
+    # - acceptance-openstack
 
 - name: build-release
   plan:
