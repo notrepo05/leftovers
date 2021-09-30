@@ -15,7 +15,7 @@ resources:
 - name: leftovers
   type: git
   source:
-    branch: feature/regex-matching
+    branch: main
     uri: https://github.com/notrepo05/leftovers.git
 
 - name: release
@@ -134,7 +134,7 @@ jobs:
   - get: leftovers
     trigger: true
     passed:
-    # - acceptance-gcp
+    - acceptance-gcp
     - acceptance-aws
     - acceptance-azure
     - acceptance-nimbus
