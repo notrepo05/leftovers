@@ -7,6 +7,7 @@ function bump_minor_version() {
   major=$(cat "${ROOT}/release/version" | cut -d 'v' -f 2 | cut -d '.' -f 1)
   minor=$(cat "${ROOT}/release/version" | cut -d '.' -f 2)
   patch=$(cat "${ROOT}/release/version" | cut -d '.' -f 3)
+  patch="${patch/-beta/}"
 
   minor=$(($minor + 1))
 
