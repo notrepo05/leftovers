@@ -26,6 +26,7 @@ type Options struct {
 	VSpherePassword      string `long:"vsphere-vcenter-password" env:"BBL_VSPHERE_VCENTER_PASSWORD" description:"vSphere vCenter password."`
 	VSphereUser          string `long:"vsphere-vcenter-user"     env:"BBL_VSPHERE_VCENTER_USER"     description:"vSphere vCenter username."`
 	VSphereDC            string `long:"vsphere-vcenter-dc"       env:"BBL_VSPHERE_VCENTER_DC"       description:"vSphere vCenter datacenter."`
+	NimbusUser           string `long:"nimbus-user"              env:"BBL_NIMBUS_USER"              description:"nimbus user."`
 	NSXTManagerHost      string `long:"nsxt-manager-host"        env:"BBL_NSXT_MANAGER_HOST"        description:"NSX-T manager IP address or domain name."`
 	NSXTUser             string `long:"nsxt-username"            env:"BBL_NSXT_USERNAME"            description:"NSX-T manager username."`
 	NSXTPassword         string `long:"nsxt-password"            env:"BBL_NSXT_PASSWORD"            description:"NSX-T manager password."`
@@ -42,6 +43,7 @@ const (
 	GCP       = "gcp"
 	Azure     = "azure"
 	VSphere   = "vsphere"
+	Nimbus    = "nimbus"
 	NSXT      = "nsxt"
 	Openstack = "openstack"
 )
@@ -107,6 +109,10 @@ func (e OtherEnvVars) LoadConfig(o *Options) {
 		}
 		if o.VSphereIP == "" {
 			o.VSphereIP = os.Getenv("VSPHERE_IP")
+		}
+	case Nimbus:
+		if o.NimbusUser == "" {
+			o.NimbusUser = os.Getenv("NIMBUS_USER")
 		}
 	}
 }

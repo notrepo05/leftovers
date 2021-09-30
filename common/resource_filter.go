@@ -2,8 +2,9 @@ package common
 
 import (
 	"fmt"
-	"github.com/dlclark/regexp2"
 	"strings"
+
+	"github.com/dlclark/regexp2"
 )
 
 func ResourceMatches(resourceName string, filter string, regex bool) bool {
